@@ -81,7 +81,12 @@ We use Jest to run our tests. You can read more about setting up your tests [her
 
 #### Environment Variables
 
-You will be able add environment variables to your project by modifying the `env.yml` file
+To add environment variables to your project
+
+1. Rename `env.example` to `env.yml`.
+2. Add environment variables for the various stages to `env.yml`.
+3. Uncomment `environment: ${file(env.yml):${self:custom.stage}}` in the `serverless.yml`.
+4. Make sure to not commit your `env.yml`.
 
 #### Linting
 
